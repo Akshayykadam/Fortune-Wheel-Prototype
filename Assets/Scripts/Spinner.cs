@@ -75,9 +75,11 @@ public class Roulette : MonoBehaviour
         float rot = transform.eulerAngles.z;
 
         // Calculate the sector the roulette pointer is pointing to
-        int sector = Mathf.FloorToInt((rot + RangeOffset) / SectorSize) % 8;
+        int sector = Mathf.FloorToInt(rot / (360f / 12f)) % 12;
+
         // Calculate the target angle within the sector
-        float targetAngle = sector * SectorSize;
+        float targetAngle = sector * (360f / 12f);
+
         // Set the rotation angle to align with the target sector
         GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, targetAngle);
 
@@ -94,8 +96,8 @@ public class Roulette : MonoBehaviour
         // If the random value is less than the adjusted probability factor, it's a win
         if (randomValue < probabilityFactor)
         {
-            // Special case: if score is 800, treat it as 100
-            if (score == 800)
+            // Special case: if score is 1200, treat it as 100
+            if (score == 1200)
                 score = 100;
 
             // Call Win method with the calculated score
@@ -107,6 +109,7 @@ public class Roulette : MonoBehaviour
             Win(0);
         }
     }
+
 
 
 
