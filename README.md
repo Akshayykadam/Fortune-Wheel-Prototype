@@ -25,7 +25,7 @@ You can adjust the RotatePower, StopPower, and CheckInterval parameters in the R
 Modify the SectorSize and RangeOffset constants for adjusting the size of each sector on the roulette wheel.
 Running the Game:
 
-Attach the Roulette.cs script to a GameObject representing the roulette wheel in your Unity scene.
+Attach the Spinner.cs script to a GameObject representing the roulette wheel in your Unity scene.
 Ensure the GameObject has a Rigidbody2D component attached.
 Press play in the Unity Editor to run the game and interact with the roulette wheel.
 Notes:
